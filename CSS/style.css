@@ -1,0 +1,167 @@
+/* ตั้งค่าฟอนต์หลักของเว็บ */
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #ffffff;
+    color: #212529;
+}
+
+/* สีพื้นหลังแบบครีมอุ่นๆ สไตล์มินิมอล */
+.bg-light-beige {
+    background-color: #fcfbf7 !important;
+}
+
+/* ปรับแต่งปุ่มให้มีความนุ่มนวลและมี HCI Interaction เวลา Hover */
+.btn {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+    transform: translateY(-2px); /* ปุ่มจะขยับขึ้นเล็กน้อยเวลาเมาส์ชี้ */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ตกแต่งการ์ดให้นุ่มนวล */
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+/* ==========================================================================
+   โค้ดเดิมของคุณ (คงไว้)
+   ========================================================================== */
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #ffffff;
+    color: #212529;
+}
+
+.bg-light-beige {
+    background-image: linear-gradient(rgba(252, 251, 247, 0.85), rgba(252, 251, 247, 0.3)), url('../images/buddha-blur.png');
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.btn {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================================================
+   ➕ เติมส่วนนี้เข้าไปใหม่ (Hover Effects ทั้ง 3 รูปแบบ)
+   ========================================================================== */
+
+/* รูปแบบที่ 1: การ์ดลอยขึ้น + มีเงานุ่มนวล (สำหรับกล่องข้อความ/กล่องวันสำคัญ) */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) !important; /* ขยับยกตัวขึ้น 8 พิกเซล */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important; /* เติมเงานุ่มๆ ด้านล่าง */
+}
+
+
+/* รูปแบบที่ 2: ปุ่มเปลี่ยนสีพื้นหลังและสีตัวอักษรแบบนุ่มนวล */
+.btn-outline-dark {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease !important;
+}
+
+.btn-outline-dark:hover {
+    background-color: #212529 !important; /* เปลี่ยนพื้นหลังเป็นสีดำ */
+    color: #ffffff !important;            /* เปลี่ยนตัวอักษรเป็นสีขาว */
+    transform: translateY(-2px);          /* ให้ปุ่มลอยขึ้นเล็กน้อย */
+}
+
+
+/* รูปแบบที่ 3: เมนูบน Navbar มีเส้นใต้ค่อยๆ ขยายวิ่งออกมา */
+.navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* สร้างเส้นใต้เตรียมเอาไว้ (แต่เริ่มต้นให้ความกว้างเป็น 0) */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #212529; /* สีของเส้นใต้ */
+    transition: width 0.3s ease; /* กำหนดความเร็วในการขยาย */
+}
+
+/* เมื่อเอาเมาส์วาง (Hover) ให้เส้นใต้ขยายเต็ม 100% */
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* ลบเอฟเฟคเส้นใต้ของหน้าปัจจุบันเพื่อความสวยงาม */
+.navbar-nav .nav-link.active::after {
+    width: 0 !important;
+}
+.btn-gold {
+    background-color: #b59246 !important; /* สีทองหม่นสไตล์มินิมอล */
+    border-color: #b59246 !important;
+}
+.btn-gold:hover {
+    background-color: #967634 !important; /* สีจะเข้มขึ้นเล็กน้อยเวลาเมาส์ชี้ */
+    transform: translateY(-2px);
+}
+/* เปลี่ยนพื้นหลังส่วนวิดีโอเป็นสีเทาเข้มเกือบดำ สไตล์โรงภาพยนตร์ */
+.bg-video-dark {
+    background-color: #363636 !important;
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+}
+
+/* สร้างเอฟเฟคแสงฟุ้งเรืองรอง (Glow Effect) ล้อมรอบกล่องวิดีโอ */
+.video-glow-container {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px -12px rgba(47, 46, 46, 0.5), 
+                0 18px 36px -18px rgba(0, 0, 0, 0.5),
+                0 0 50px 0 rgba(181, 146, 70, 0.15); /* แสงสีทองจางๆ ฟุ้งรอบวิดีโอ */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* เพิ่มลูกเล่นปฏิสัมพันธ์ (HCI Interaction) เมื่อผู้ใช้เอาเมาส์มาวางใกล้กล่องวิดีโอ */
+.video-glow-container:hover {
+    transform: scale(1.015); /* วิดีโอจะขยายใหญ่ขึ้นเล็กน้อยอย่างนุ่มนวล */
+    box-shadow: 0 40px 80px -12px rgba(0, 0, 0, 0.6), 
+                0 0 60px 5px rgba(240, 202, 118, 0.35); /* แสงสีทองจะสว่างเรืองรองขึ้น */
+}
+/* สั่งให้ทั้งหน้าเว็บ เวลาสะกิดหรือกดลิงก์ข้ามส่วน เว้นระยะหลบเมนูด้านบนลงมาอัตโนมัติ */
+html {
+    scroll-padding-top: 30px; /* ขยับระยะลงมา 30 พิกเซล  */
+    scroll-behavior: smooth;  /* แถมลูกเล่นเวลาเลื่อนหน้าเว็บให้ไหลลื่น นุ่มนวล ไม่กระตุกกระชาก */
+}
+/* คลาสกำหนดสีทองหม่น สไตล์มินิมอลพรีเมียม */
+.text-gold {
+    color: #b59246 !important;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+}
+/* ลูกเล่นแอนิเมชันให้ลิงก์แหล่งอ้างอิงดูพรีเมียม */
+.style-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.style-card:hover {
+    transform: translateY(-5px); /* การ์ดจะลอยขึ้น 5 พิกเซลเมื่อเมาส์ชี้ */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+}
+.transition-btn {
+    transition: background-color 0.2s ease;
+}
+.transition-btn:hover {
+    background-color: #b59246 !important; /* ปุ่มจะเปลี่ยนเป็นสีทองหม่นเวลาชี้ */
+}
